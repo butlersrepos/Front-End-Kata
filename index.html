@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="vanilla-carousel.css">
+  </head>
+  <body>
+    <h2>Click on the image to pause/resume rotation.</h2>
+    <h4>Image will size to width of screen up to 1200px.</h4>
+    <fieldset class="carousel-container">
+      <legend>Carousel with pure CSS</legend>
+      <div class="vanilla-carousel">
+        <img class="vanilla-carousel--img" src="assets/pillar-banner/pillar-banner.png" alt="Pillar Banner with Joel Ferguson" srcset="assets/pillar-banner/pillar-banner@2x.png 2x, assets/pillar-banner/pillar-banner@3x.png 3x">
+        <img class="vanilla-carousel--img" src="assets/oh-banner/oh-banner.png" alt="OH Banner with Phones" srcset="assets/oh-banner/oh-banner@2x.png 2x, assets/oh-banner/oh-banner@3x.png 3x">
+        <img class="vanilla-carousel--img" src="assets/car-banner/car-banner.png" alt="Car Banner with Phones" srcset="assets/car-banner/car-banner@2x.png 2x, assets/car-banner/car-banner@3x.png 3x">
+
+        <div class="vanilla-carousel--indicator">
+          <span class="vanilla-carousel--indicator--marker"></span>
+          <span class="vanilla-carousel--indicator--marker"></span>
+          <span class="vanilla-carousel--indicator--marker"></span>
+          <span class="vanilla-carousel--indicator--highlight"></span>
+        </div>
+      </div>
+    </fieldset>
+    <script>
+      const $ = selector => document.querySelector(selector)
+      const $$ = selector => document.querySelectorAll(selector)
+
+      $('.vanilla-carousel').addEventListener('click', () => {
+        $$('.vanilla-carousel--img').forEach(img => img.classList.toggle('vanilla-carousel--img__paused'))
+        $('.vanilla-carousel--indicator--highlight').classList.toggle('vanilla-carousel--indicator--highlight__paused')
+        $('.carousel-container').classList.toggle('carousel-container__paused')
+      })
+    </script>
+  </body>
+</html>

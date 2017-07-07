@@ -1,0 +1,98 @@
+.vanilla-carousel {
+    --totalAnimationTime: 9s;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    width: calc(100vw - 3rem);
+    max-width: 1200px;
+}
+
+.vanilla-carousel--img {
+    width: 100%;
+    animation: carousel var(--totalAnimationTime) ease-in-out infinite forwards;
+}
+
+.vanilla-carousel--img__paused {
+    animation-play-state: paused;
+}
+
+.vanilla-carousel--indicator {
+    --height: .125rem;
+    --indicatorWidth: 10rem;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    width: var(--indicatorWidth);
+    height: var(--height);
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.vanilla-carousel--indicator--marker {
+    width: calc(var(--indicatorWidth) / 4);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.vanilla-carousel--indicator--highlight {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: var(--height);
+    width: calc(var(--indicatorWidth) / 4);
+    background: rgba(255, 255, 255, 1);
+    animation: carouselMarker var(--totalAnimationTime) ease-in-out infinite forwards;
+}
+
+.vanilla-carousel--indicator--highlight__paused {
+    animation-play-state: paused;
+}
+
+@keyframes carouselMarker {
+    0% {
+        transform: translateX(0);
+    }
+    22% {
+        transform: translateX(0);
+    }
+    33% {
+        transform: translateX(calc(1.5 * var(--indicatorWidth) / 4));
+    }
+    55% {
+        transform: translateX(calc(1.5 * var(--indicatorWidth) / 4));
+    }
+    66% {
+        transform: translateX(calc(3 * var(--indicatorWidth) / 4));
+    }
+    88% {
+        transform: translateX(calc(3 * var(--indicatorWidth) / 4));
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes carousel {
+    0% {
+        transform: translateX(0);
+    }
+    22% {
+        transform: translateX(0);
+    }
+    33% {
+        transform: translateX(-100%);
+    }
+    55% {
+        transform: translateX(-100%);
+    }
+    66% {
+        transform: translateX(-200%);
+    }
+    88% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

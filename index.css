@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+}
+
+h2 {
+    font-family: sans-serif;
+}
+
+.carousel-container {
+    display: inline-block;
+    background: lightgrey;
+    border-color: grey;
+    border-width: 1rem;
+    padding: .5rem;
+}
+
+.carousel-container__paused {
+    border-color: cornflowerblue;
+}
+
+.carousel-container__paused legend {
+    filter: blur(1px);
+}
+
+legend {
+    font-family: monospace, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: black;
+    color: white;
+    font-size: 0.85rem;
+    letter-spacing: .75rem;
+}
